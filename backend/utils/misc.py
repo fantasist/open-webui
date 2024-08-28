@@ -144,7 +144,7 @@ def apply_model_params_to_body(
     for key, cast_func in mappings.items():
         if (value := params.get(key)) is not None:
             form_data[key] = cast_func(value)
-    form_data["repetition_penalty"] = 1.05
+    # form_data["repetition_penalty"] = 1.05
     return form_data
 
 
