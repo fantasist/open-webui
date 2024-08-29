@@ -83,7 +83,7 @@ def add_or_update_system_message(content: str, messages: list[dict]):
     """
 
     current_date = date.today().strftime("%Y-%m-%d")
-    content += f"\nKnowledge cutoff: 2024-04\nCurrent date:{current_date}"
+    content += f"\nKnowledge cutoff: 2024-04\nCurrent date: {current_date}"
     if messages and messages[0].get("role") == "system":
         messages[0]["content"] += f"{content}\n{messages[0]['content']}"
     else:
