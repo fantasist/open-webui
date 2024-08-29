@@ -5,6 +5,7 @@ from datetime import timedelta
 from typing import Optional, Callable
 import uuid
 import time
+from datetime import date
 
 from utils.task import prompt_template
 
@@ -81,6 +82,8 @@ def add_or_update_system_message(content: str, messages: list[dict]):
     :return: The updated list of message dictionaries.
     """
 
+    current_date = date.today().strftime("%Y-%m-%d")
+    content += f"\nKnowledge cutoff: 2024-04\nCurrent date:{current_date}"
     if messages and messages[0].get("role") == "system":
         messages[0]["content"] += f"{content}\n{messages[0]['content']}"
     else:
