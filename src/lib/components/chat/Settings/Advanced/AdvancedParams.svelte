@@ -14,6 +14,7 @@
 		stop: null,
 		temperature: null,
 		frequency_penalty: null,
+		repetition_penalty: null,
 		repeat_last_n: null,
 		mirostat: null,
 		mirostat_eta: null,
@@ -468,6 +469,52 @@
 				<div>
 					<input
 						bind:value={params.frequency_penalty}
+						type="number"
+						class=" bg-transparent text-center w-14"
+						min="0"
+						max="2"
+						step="any"
+					/>
+				</div>
+			</div>
+		{/if}
+	</div>
+
+	<div class=" py-0.5 w-full justify-between">
+		<div class="flex w-full justify-between">
+			<div class=" self-center text-xs font-medium">{$i18n.t('Repetition Penalty')}</div>
+
+			<button
+				class="p-1 px-3 text-xs flex rounded transition flex-shrink-0 outline-none"
+				type="button"
+				on:click={() => {
+					params.repetition_penalty = (params?.repetition_penalty ?? null) === null ? 1.05 : null;
+				}}
+			>
+				{#if (params?.repetition_penalty ?? null) === null}
+					<span class="ml-2 self-center">{$i18n.t('Default')}</span>
+				{:else}
+					<span class="ml-2 self-center">{$i18n.t('Custom')}</span>
+				{/if}
+			</button>
+		</div>
+
+		{#if (params?.repetition_penalty ?? null) !== null}
+			<div class="flex mt-0.5 space-x-2">
+				<div class=" flex-1">
+					<input
+						id="steps-range"
+						type="range"
+						min="0"
+						max="2"
+						step="0.05"
+						bind:value={params.repetition_penalty}
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+					/>
+				</div>
+				<div>
+					<input
+						bind:value={params.repetition_penalty}
 						type="number"
 						class=" bg-transparent text-center w-14"
 						min="0"

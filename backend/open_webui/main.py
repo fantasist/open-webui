@@ -2243,13 +2243,13 @@ async def get_manifest_json():
         "orientation": "portrait-primary",
         "icons": [
             {
-                "src": "/static/logo.png",
+                "src": "/static/logo1.png",
                 "type": "image/png",
                 "sizes": "500x500",
                 "purpose": "any",
             },
             {
-                "src": "/static/logo.png",
+                "src": "/static/logo1.png",
                 "type": "image/png",
                 "sizes": "500x500",
                 "purpose": "maskable",
@@ -2265,7 +2265,7 @@ async def get_opensearch_xml():
     <ShortName>{WEBUI_NAME}</ShortName>
     <Description>Search {WEBUI_NAME}</Description>
     <InputEncoding>UTF-8</InputEncoding>
-    <Image width="16" height="16" type="image/x-icon">{WEBUI_URL}/static/favicon.png</Image>
+    <Image width="16" height="16" type="image/x-icon">{WEBUI_URL}/static/favicon1.png</Image>
     <Url type="text/html" method="get" template="{WEBUI_URL}/?q={"{searchTerms}"}"/>
     <moz:SearchForm>{WEBUI_URL}</moz:SearchForm>
     </OpenSearchDescription>

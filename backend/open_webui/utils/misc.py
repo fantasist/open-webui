@@ -2,7 +2,7 @@ import hashlib
 import re
 import time
 import uuid
-from datetime import timedelta
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Callable, Optional
 
@@ -81,6 +81,8 @@ def add_or_update_system_message(content: str, messages: list[dict]):
     :return: The updated list of message dictionaries.
     """
 
+    current_date = date.today().strftime("%Y-%m-%d")
+    content += f"\nKnowledge cutoff: 2024-04\nCurrent date: {current_date}"
     if messages and messages[0].get("role") == "system":
         messages[0]["content"] = f"{content}\n{messages[0]['content']}"
     else:
@@ -144,7 +146,7 @@ def apply_model_params_to_body(
     for key, cast_func in mappings.items():
         if (value := params.get(key)) is not None:
             form_data[key] = cast_func(value)
-
+    # form_data["repetition_penalty"] = 1.05
     return form_data
 
 
@@ -155,6 +157,7 @@ def apply_model_params_to_body_openai(params: dict, form_data: dict) -> dict:
         "top_p": int,
         "max_tokens": int,
         "frequency_penalty": int,
+        "repetition_penalty": float,
         "seed": lambda x: x,
         "stop": lambda x: [bytes(s, "utf-8").decode("unicode_escape") for s in x],
     }
