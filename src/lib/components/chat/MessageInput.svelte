@@ -479,8 +479,8 @@
 							{/if}
 
 							<div class=" flex">
-								<div class=" ml-0.5 self-end mb-1.5 flex space-x-1">
-									<InputMenu
+								<div class=" ml-3.5 self-end mb-1.5 flex space-x-1">
+									<!-- <InputMenu
 										bind:webSearchEnabled
 										bind:selectedToolIds
 										tools={$tools.reduce((a, e, i, arr) => {
@@ -517,7 +517,7 @@
 												/>
 											</svg>
 										</button>
-									</InputMenu>
+									</InputMenu> -->
 								</div>
 
 								<textarea
@@ -688,7 +688,7 @@
 									}}
 								/>
 
-								<div class="self-end mb-2 flex space-x-1 mr-1">
+								<!-- <div class="self-end mb-2 flex space-x-1 mr-1">
 									{#if messages.length == 0 || messages.at(-1).done == true}
 										<Tooltip content={$i18n.t('Record voice')}>
 											<button
@@ -737,13 +737,13 @@
 											</button>
 										</Tooltip>
 									{/if}
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div class="flex items-end w-10">
 							{#if messages.length == 0 || messages.at(-1).done == true}
 								{#if prompt === ''}
-									<div class=" flex items-center mb-1">
+									<!-- <div class=" flex items-center mb-1">
 										<Tooltip content={$i18n.t('Call')}>
 											<button
 												class=" text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-850 transition rounded-full p-2 self-center"
@@ -786,7 +786,7 @@
 												<Headphone className="size-6" />
 											</button>
 										</Tooltip>
-									</div>
+									</div> -->
 								{:else}
 									<div class=" flex items-center mb-1">
 										<Tooltip content={$i18n.t('Send message')}>
