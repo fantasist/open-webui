@@ -30,7 +30,7 @@
 	let showUsername = false;
 
 	let chatBubble = true;
-	let chatDirection: 'LTR' | 'RTL' = 'LTR';
+	let chatDirection: 'LTR' | 'RTL' = 'RTL';
 
 	let showEmojiInCall = false;
 	let voiceInterruption = false;
@@ -154,7 +154,7 @@
 		widescreenMode = $settings.widescreenMode ?? false;
 		splitLargeChunks = $settings.splitLargeChunks ?? false;
 		scrollOnBranchChange = $settings.scrollOnBranchChange ?? true;
-		chatDirection = $settings.chatDirection ?? 'LTR';
+		chatDirection = $settings.chatDirection ?? 'RTL';
 		userLocation = $settings.userLocation ?? false;
 
 		hapticFeedback = $settings.hapticFeedback ?? false;

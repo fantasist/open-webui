@@ -161,16 +161,16 @@
 						<div class="mb-1">
 							<div class=" text-2xl font-medium">
 								{mode === 'signin' ? $i18n.t('Sign in') : $i18n.t('Sign up')}
-								{$i18n.t('to')}
-								{$WEBUI_NAME}
+								<!-- {$i18n.t('to')} -->
+								<!-- {$WEBUI_NAME} -->
 							</div>
 
 							{#if mode === 'signup'}
 								<div class=" mt-1 text-xs font-medium text-gray-500">
-									ⓘ {$WEBUI_NAME}
-									{$i18n.t(
+									<!-- ⓘ {$WEBUI_NAME} -->
+									<!-- {$i18n.t(
 										'does not make any external connections, and your data stays securely on your locally hosted server.'
-									)}
+									)} -->
 								</div>
 							{/if}
 						</div>
@@ -179,7 +179,7 @@
 							<div class="flex flex-col mt-4">
 								{#if mode === 'signup'}
 									<div>
-										<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Name')}</div>
+										<div class=" text-sm font-medium text-right mb-1">{$i18n.t('Name')}</div>
 										<input
 											bind:value={name}
 											type="text"
@@ -187,6 +187,7 @@
 											autocomplete="name"
 											placeholder={$i18n.t('Enter Your Full Name')}
 											required
+											dir = "RTL"
 										/>
 									</div>
 
@@ -194,7 +195,7 @@
 								{/if}
 
 								<div class="mb-2">
-									<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Email')}</div>
+									<div class=" text-sm font-medium text-right mb-1">{$i18n.t('Email')}</div>
 									<input
 										bind:value={email}
 										type="email"
@@ -202,11 +203,12 @@
 										autocomplete="email"
 										placeholder={$i18n.t('Enter Your Email')}
 										required
+										dir = "RTL"
 									/>
 								</div>
 
 								<div>
-									<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Password')}</div>
+									<div class=" text-sm font-medium text-right mb-1">{$i18n.t('Password')}</div>
 
 									<input
 										bind:value={password}
@@ -215,6 +217,7 @@
 										placeholder={$i18n.t('Enter Your Password')}
 										autocomplete="current-password"
 										required
+										dir = "RTL"
 									/>
 								</div>
 							</div>

@@ -307,7 +307,7 @@
 	<div
 		class=" flex w-full message-{message.id}"
 		id="message-{message.id}"
-		dir={$settings.chatDirection}
+		dir={$settings?.chatDirection ?? 'RTL'}
 	>
 		<ProfileImage
 			src={model?.info?.meta?.profile_image_url ??

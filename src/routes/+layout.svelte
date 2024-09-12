@@ -64,13 +64,14 @@
 
 		initI18n();
 		if (!localStorage.locale) {
-			const languages = await getLanguages();
-			const browserLanguages = navigator.languages
-				? navigator.languages
-				: [navigator.language || navigator.userLanguage];
-			const lang = backendConfig.default_locale
-				? backendConfig.default_locale
-				: bestMatchingLanguage(languages, browserLanguages, 'en-US');
+			// const languages = await getLanguages();
+			// const browserLanguages = navigator.languages
+			// 	? navigator.languages
+			// 	: [navigator.language || navigator.userLanguage];
+			// const lang = backendConfig.default_locale
+			// 	? backendConfig.default_locale
+			// 	: bestMatchingLanguage(languages, browserLanguages, 'en-US');
+			const lang = 'ar-BH';
 			$i18n.changeLanguage(lang);
 		}
 
